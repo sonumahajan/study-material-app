@@ -19,6 +19,40 @@ Screen:
 
         MDNavigationDrawer:
             id: nav_drawer
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'me.jpeg'
+
+                MDLabel:
+                    text: '    Sonu'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                MDLabel:
+                    text: '    mahajan00sonu@gmail.com'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Profile'
+                            IconLeftWidget:
+                                icon: 'face-profile-woman'
+                        OneLineIconListItem:
+                            text: 'Upload'
+                            IconLeftWidget:
+                                icon: 'file-upload'
+                        OneLineIconListItem:
+                            text: 'LogOut'
+                            IconLeftWidget:
+                                icon: 'logout'
 
 """
 class MainApp(MDApp):
