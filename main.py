@@ -1,63 +1,30 @@
 from kivymd.app import MDApp
 from kivy.lang import Builder
 from kivy.core.window import Window
+from kivy.uix.screenmanager import Screen, ScreenManager
+from helper_file import helper_str
 
 Window.size = (380,620)
 
-helper = """
-Screen:
-    NavigationLayout:
-        ScreenManager:
-            Screen:
-                BoxLayout:
-                    orientation: 'vertical'
-                    MDToolbar:
-                        title: 'Demo Application'
-                        left_action_items: [["menu", lambda x: nav_drawer.set_state()]]  # you can use toggle_nav_drawer insted of set state
-                        elevation: 10
-                    Widget:
 
-        MDNavigationDrawer:
-            id: nav_drawer
-            BoxLayout:
-                orientation: 'vertical'
-                spacing: '8dp'
-                padding: '8dp'
+class MenuScreen(Screen):
+    pass
 
-                Image:
-                    source: 'me.jpeg'
+class ProfileScreen(Screen):
+    pass
 
-                MDLabel:
-                    text: '    Sonu'
-                    font_style: 'Subtitle1'
-                    size_hint_y: None
-                    height: self.texture_size[1]
+class UploadScreen(Screen):
+    pass
 
-                MDLabel:
-                    text: '    mahajan00sonu@gmail.com'
-                    font_style: 'Subtitle1'
-                    size_hint_y: None
-                    height: self.texture_size[1]
+sm = ScreenManager()
+sm.add_widget(MenuScreen(name='menu'))
+sm.add_widget(ProfileScreen(name='profile'))
+sm.add_widget(UploadScreen(name='upload'))
 
-                ScrollView:
-                    MDList:
-                        OneLineIconListItem:
-                            text: 'Profile'
-                            IconLeftWidget:
-                                icon: 'face-profile-woman'
-                        OneLineIconListItem:
-                            text: 'Upload'
-                            IconLeftWidget:
-                                icon: 'file-upload'
-                        OneLineIconListItem:
-                            text: 'LogOut'
-                            IconLeftWidget:
-                                icon: 'logout'
 
-"""
 class MainApp(MDApp):
     def build(self):
-        screen = Builder.load_string(helper)
+        screen = Builder.load_string(helper_str)
         return screen
 
 MainApp().run()
