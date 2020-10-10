@@ -27,7 +27,7 @@ ScreenManager:
                     padding: '8dp'
 
                     Image:
-                        source: 'me.jpeg'
+                        source: 'images/me.jpeg'
 
                     MDLabel:
                         text: '    Sonu'

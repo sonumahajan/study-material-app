@@ -4,6 +4,7 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import Screen, ScreenManager
 from helper_file import helper_str
 
+
 Window.size = (380,620)
 
 
@@ -16,7 +17,9 @@ class ProfileScreen(Screen):
 class UploadScreen(Screen):
     pass
 
+
 sm = ScreenManager()
+
 sm.add_widget(MenuScreen(name='menu'))
 sm.add_widget(ProfileScreen(name='profile'))
 sm.add_widget(UploadScreen(name='upload'))
@@ -28,3 +31,6 @@ class MainApp(MDApp):
         return screen
 
 MainApp().run()
+
+
+
