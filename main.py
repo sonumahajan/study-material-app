@@ -17,6 +17,14 @@ class ProfileScreen(Screen):
 class UploadScreen(Screen):
     pass
 
+class BcaScreen(Screen):
+    pass
+class BcomScreen(Screen):
+    pass
+class BaScreen(Screen):
+    pass
+
+
 
 sm = ScreenManager()
 

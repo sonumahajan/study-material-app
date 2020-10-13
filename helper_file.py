@@ -4,6 +4,9 @@ ScreenManager:
     MenuScreen:
     ProfileScreen:
     UploadScreen:
+    BcaScreen:
+    BcomScreen:
+    BaScreen:
 
 <MenuScreen>:
     name: 'menu'
@@ -23,29 +26,40 @@ ScreenManager:
                         pos_hint: {'center_x': .55, 'y': .35}
                         MDList:
                             OneLineIconListItem:
-                                text: 'Profile'
+                                text: 'BCA'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'laptop'
                             OneLineIconListItem:
-                                text: 'Upload'
+                                text: 'BCom'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'bank-plus'
                             OneLineIconListItem:
-                                text: 'LogOut'
+                                text: 'BA'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'pencil-circle'
                             OneLineIconListItem:
-                                text: 'Profile'
+                                text: 'BBA'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'account-badge-horizontal-outline'
                             OneLineIconListItem:
-                                text: 'Upload'
+                                text: 'MCom'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'account-badge-horizontal'
                             OneLineIconListItem:
-                                text: 'LogOut'
+                                text: 'MA'
+                                on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
-                                    icon: 'face-profile-woman'
+                                    icon: 'bolnisi-cross'
+                            OneLineIconListItem:
+                                text: 'PGDCA'
+                                on_press: root.manager.current = 'bca'
+                                IconLeftWidget:
+                                    icon: 'alpha-p-box'
 
             MDNavigationDrawer:
                 id: nav_drawer
@@ -108,5 +122,33 @@ ScreenManager:
         pos_hint: {'center_x':0.5, 'center_y':0.2}
         on_press: root.manager.current = 'menu'
 
+<BcaScreen>:
+    name: 'bca'
+    MDCard:
+        # on_press: root.manager.current = 'bca2'   not using
+        orientation: "vertical"
+        padding: "8dp"
+        size_hint: None, None
+        size: "250dp", "150dp"
+        pos_hint: {"center_x": .5, "center_y": .8}
+        MDLabel:
+            text: "Previous year Question Papers"
+    MDCard:
+        orientation: "vertical"
+        padding: "8dp"
+        size_hint: None, None
+        size: "250dp", "150dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        MDLabel:
+            text: "Important Questions"
+    MDCard:
+        orientation: "vertical"
+        padding: "8dp"
+        size_hint: None, None
+        size: "250dp", "150dp"
+        pos_hint: {"center_x": .5, "center_y": .2}
+        MDLabel:
+            text: "Notes"
+            # pos_hint_x: {"center_x": .5}   not working
 
 """
