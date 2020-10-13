@@ -18,6 +18,34 @@ ScreenManager:
                             left_action_items: [["menu", lambda x: nav_drawer.set_state()]]  # you can use toggle_nav_drawer insted of set state
                             elevation: 10
                         Widget:
+                    ScrollView:
+                        size_hint: (0.99, 0.55)
+                        pos_hint: {'center_x': .55, 'y': .35}
+                        MDList:
+                            OneLineIconListItem:
+                                text: 'Profile'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
+                            OneLineIconListItem:
+                                text: 'Upload'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
+                            OneLineIconListItem:
+                                text: 'LogOut'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
+                            OneLineIconListItem:
+                                text: 'Profile'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
+                            OneLineIconListItem:
+                                text: 'Upload'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
+                            OneLineIconListItem:
+                                text: 'LogOut'
+                                IconLeftWidget:
+                                    icon: 'face-profile-woman'
 
             MDNavigationDrawer:
                 id: nav_drawer
