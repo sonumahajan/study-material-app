@@ -17,7 +17,7 @@ ScreenManager:
                     BoxLayout:
                         orientation: 'vertical'
                         MDToolbar:
-                            title: 'Demo Application'
+                            title: 'Study Material App '
                             left_action_items: [["menu", lambda x: nav_drawer.set_state()]]  # you can use toggle_nav_drawer insted of set state
                             elevation: 10
                         Widget:
