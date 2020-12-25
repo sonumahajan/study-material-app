@@ -4,9 +4,14 @@ ScreenManager:
     MenuScreen:
     ProfileScreen:
     UploadScreen:
+    LoginScreen:
     BcaScreen:
     BcomScreen:
     BaScreen:
+    BbaScreen:
+    McomScreen:
+    MaScreen:
+    PgdcaScreen:
 
 <MenuScreen>:
     name: 'menu'
@@ -22,10 +27,47 @@ ScreenManager:
                             elevation: 10
                         Widget:
                     ScrollView:
-                        size_hint: (0.99, 0.55)
-                        pos_hint: {'center_x': .55, 'y': .35}
+                        size_hint: (1.1, 0.85)
+                        pos_hint: {'center_x': .55, 'y': .05}
                         MDList:
                             OneLineIconListItem:
+                                id: 'bca141'
+                                text: 'BCA'
+                                on_press: root.manager.current = 'bca'
+                                IconLeftWidget:
+                                    icon: 'laptop'
+                            OneLineIconListItem:
+                                text: 'BCom'
+                                on_press: root.manager.current = 'bcom'
+                                IconLeftWidget:
+                                    icon: 'bank-plus'
+                            OneLineIconListItem:
+                                text: 'BA'
+                                on_press: root.manager.current = 'ba'
+                                IconLeftWidget:
+                                    icon: 'pencil-circle'
+                            OneLineIconListItem:
+                                text: 'BBA'
+                                on_press: root.manager.current = 'bba'
+                                IconLeftWidget:
+                                    icon: 'account-badge-horizontal-outline'
+                            OneLineIconListItem:
+                                text: 'MCom'
+                                on_press: root.manager.current = 'mcom'
+                                IconLeftWidget:
+                                    icon: 'account-badge-horizontal'
+                            OneLineIconListItem:
+                                text: 'MA'
+                                on_press: root.manager.current = 'ma'
+                                IconLeftWidget:
+                                    icon: 'bolnisi-cross'
+                            OneLineIconListItem:
+                                text: 'PGDCA'
+                                on_press: root.manager.current = 'pgdca'
+                                IconLeftWidget:
+                                    icon: 'alpha-p-box'
+                            OneLineIconListItem:
+                                id: 'bca141'
                                 text: 'BCA'
                                 on_press: root.manager.current = 'bca'
                                 IconLeftWidget:
@@ -98,9 +140,11 @@ ScreenManager:
                                     icon: 'file-upload'
                                     
                             OneLineIconListItem:
-                                text: 'LogOut'
+                                text: 'Login'
+                                on_press: root.manager.current = 'login'
                                 IconLeftWidget:
                                     icon: 'logout'
+
 
 <ProfileScreen>:
     name: 'profile'
@@ -122,33 +166,231 @@ ScreenManager:
         pos_hint: {'center_x':0.5, 'center_y':0.2}
         on_press: root.manager.current = 'menu'
 
+<LoginScreen>:
+    name: 'login'
+    MDLabel:
+        text: 'let login here.'
+        halign: 'center'
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5, 'center_y':0.2}
+        on_press: root.manager.current = 'menu'
+
 <BcaScreen>:
     name: 'bca'
-    MDCard:
-        # on_press: root.manager.current = 'bca2'   not using
-        orientation: "vertical"
-        padding: "8dp"
-        size_hint: None, None
-        size: "250dp", "150dp"
-        pos_hint: {"center_x": .5, "center_y": .8}
-        MDLabel:
-            text: "Previous year Question Papers"
-    MDCard:
-        orientation: "vertical"
-        padding: "8dp"
-        size_hint: None, None
-        size: "250dp", "150dp"
-        pos_hint: {"center_x": .5, "center_y": .5}
-        MDLabel:
-            text: "Important Questions"
-    MDCard:
-        orientation: "vertical"
-        padding: "8dp"
-        size_hint: None, None
-        size: "250dp", "150dp"
-        pos_hint: {"center_x": .5, "center_y": .2}
-        MDLabel:
-            text: "Notes"
-            # pos_hint_x: {"center_x": .5}   not working
+    MDLabel:
+        text: 'BCA'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+        # MDRectangleFlatButton:
+        #     text: 'Back'
+        #     pos_hint: {'center_x':0.5, 'center_y':0.2}
+        #     on_press: root.manager.current = 'menu'
+
+<BcomScreen>:
+    name: 'bcom'
+    MDLabel:
+        text: 'BCom'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+   
+
+<BaScreen>:
+    name: 'ba'
+    MDLabel:
+        text: 'BA'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+
+
+<BbaScreen>:
+    name: 'bba'
+    MDLabel:
+        text: 'BBA'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+
+<McomScreen>:
+    name: 'mcom'
+    MDLabel:
+        text: 'MCom'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+
+<MaScreen>:
+    name: 'ma'
+    MDLabel:
+        text: 'MA'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+
+<PgdcaScreen>:
+    name: 'pgdca'
+    MDLabel:
+        text: 'PGDCA'
+        font_style: 'H5'
+        color: 0.1, 0.5, 0.6, 1 
+        size_hint_y: None
+        height: self.texture_size[1]
+        pos_hint: {'x':0.45, 'y':0.94}
+    BoxLayout:
+        padding: 40
+        spacing: 40
+        orientation: 'vertical'
+        pos_hint: {'x':0, 'y':-0.01}
+        Button:
+            text: 'Previous year Question Papers'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('0')
+        Button:
+            text: 'Important Questions'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('1')
+        Button:
+            text: 'Notes'
+            font_size: 20
+            background_color: 0.1, 0.5, 0.6, 1 
+            on_release: print('2')
+
 
 """
