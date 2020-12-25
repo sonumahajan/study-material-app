@@ -143,7 +143,7 @@ ScreenManager:
                                 text: 'Login'
                                 on_press: root.manager.current = 'login'
                                 IconLeftWidget:
-                                    icon: 'logout'
+                                    icon: 'login'
 
 
 <ProfileScreen>:
