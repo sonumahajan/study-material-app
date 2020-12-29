@@ -12,6 +12,7 @@ ScreenManager:
     McomScreen:
     MaScreen:
     PgdcaScreen:
+    oldquesScreen:
 
 <MenuScreen>:
     name: 'menu'
@@ -194,7 +195,7 @@ ScreenManager:
             text: 'Previous year Question Papers'
             font_size: 20
             background_color: 0.1, 0.5, 0.6, 1 
-            on_release: print('0')
+            on_release: root.manager.current = 'oldques'
         Button:
             text: 'Important Questions'
             font_size: 20
@@ -391,6 +392,58 @@ ScreenManager:
             font_size: 20
             background_color: 0.1, 0.5, 0.6, 1 
             on_release: print('2')
+
+<oldquesScreen>:
+    name: 'oldques'
+    Screen: 
+        name: 'itemscad_oldques'
+        BoxLayout:
+            id: boxcad
+            orientation: 'vertical'
+            MDToolbar:
+                id: toolcad
+                title: "Select Semester"
+                md_bg_color: app.theme_cls.primary_color
+                anchor_title: 'justify'
+                # left_action_items: [['menu-left', lambda x: app.back_button()]]      #for back button but showing errors
+            BoxLayout:
+                id: tabox
+                orientation: 'vertical'
+                MDTabs:
+                    id: itemstab
+                    tab_display_mode: 'text'            
+
+                    MDTabsBase:
+                        id: ingr_tab
+                        name: 'Semester 1'
+                        text: "Semester 1"                                                
+
+                    MDTabsBase:
+                        id: prod_tab
+                        name: 'Semester 3'
+                        text: "Semester 3"
+
+                    MDTabsBase:
+                        id: pack_tab
+                        name: 'Semester 5'
+                        text: "Semester 5"
+
+            FloatLayout:       
+                BoxLayout:
+                    id: listbox
+                    size_hint_y: None
+                    height: boxcad.height - (toolcad.height + itemstab.tab_bar_height)
+                    orientation: 'vertical'
+                    ScrollView:
+                        do_scroll_x: False
+                        MDList:     
+                            OneLineRightIconListItem:
+                                text: 'Strawberry Cake'
+                            OneLineRightIconListItem:
+                                text: 'Chocolate Cake'
+                            OneLineRightIconListItem:
+                                text: 'Vanilla Cake'
+
 
 
 """

@@ -41,6 +41,8 @@ class MaScreen(Screen):
 class PgdcaScreen(Screen):
     pass
 
+class oldquesScreen(Screen):
+    pass
 
 
 sm = ScreenManager()
@@ -56,6 +58,7 @@ sm.add_widget(BbaScreen(name='bba'))
 sm.add_widget(McomScreen(name='mcom'))
 sm.add_widget(MaScreen(name='ma'))
 sm.add_widget(PgdcaScreen(name='pgdca'))
+sm.add_widget(oldquesScreen(name='oldques'))
 
 class MainApp(MDApp):
     def build(self):
